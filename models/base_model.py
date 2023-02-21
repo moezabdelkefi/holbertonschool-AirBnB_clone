@@ -15,8 +15,10 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
                     # Convert datetime string to datetime object
-                    # sets the value of an attribute on an object. It takes three arguments name, value,object
-                    setattr(self, key, datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f'))
+                    # sets the value of an attribute on an object.
+                    # It takes three arguments name, value,object
+                    setattr(self, key, datetime.datetime.strptime(
+                        value, '%Y-%m-%dT%H:%M:%S.%f'))
                 elif key != '__class__':
                     setattr(self, key, value)
 
