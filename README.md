@@ -123,7 +123,7 @@ Unit tests must also pass in non-interactive mode
                             guillaume@ubuntu:~/AirBnB$
 
 ## flowchart
-
+              +----------+
               |  Start   |
               +-----+----+                                           
                     |
