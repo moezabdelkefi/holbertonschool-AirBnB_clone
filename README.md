@@ -124,73 +124,73 @@ Unit tests must also pass in non-interactive mode
 
 ## flowchart
 
-                                    |  Start   |
-                                    +-----+----+
-                                        |
-                                        v
-                            +----------------------------------------+
-                            | Display prompt                         |
-                            +----------------------+-----------------+
+              |  Start   |
+              +-----+----+                                           
+                    |
+                    v                    
+                  +---------------------+
+                  | Display prompt      |
+                  +---------------------+
+                             |
+                             v
+                            +----------------------+
+                            | Wait for user input  |
+                            +----------------------+
+                                       |
+                                       v
+                                  +----------------------------------------+
+                                  | Parse user input and identify command  |
+                                  | and arguments                           |
+                                  +----------------------+-----------------+
                                                 |
                                                 v
-                            +-----------------------+----------------+
-                            | Wait for user input                   |
-                            +----------------------+-----------------+
-                                                |
-                                                v
-                            +----------------------------------------+
-                            | Parse user input and identify command  |
-                            | and arguments                           |
-                            +----------------------+-----------------+
-                                                |
-                                                v
-                            +----------------------------------------+
-                            | Execute command                        |
-                            +----------------------+-----------------+
-                                                |
-                                                v
-                            +-----------------------+----------------+
-                            | If command is "quit":                   |
-                            |     Exit the console                    |
-                            +----------------------+-----------------+
-                            | If command is "help":                   |
-                            |     Display help text                   |
-                            +----------------------+-----------------+
-                            | If command is "create":                 |
-                            |     Check if class name is valid        |
-                            |     Create a new instance of the class  |
-                            |     Save the instance to a file         |
-                            |     Display the ID of the new instance  |
-                            +----------------------+-----------------+
-                            | If command is "show":                   |
-                            |     Check if class name and ID are valid|
-                            |     Retrieve the instance from the file |
-                            |     Display the string representation  |
-                            |     of the instance                     |
-                            +----------------------+-----------------+
-                            | If command is "destroy":                |
-                            |     Check if class name and ID are valid|
-                            |     Delete the instance from the file   |
-                            +----------------------+-----------------+
-                            | If command is "all":                    |
-                            |     Check if class name is valid        |
-                            |     Retrieve all instances of the class |
-                            |     from the file                       |
-                            |     Display the string representation  |
-                            |     of each instance                    |
-                            +----------------------+-----------------+
-                            | If command is "update":                 |
-                            |     Check if class name and ID are valid|
-                            |     Update the instance with the        |
-                            |     provided key-value pairs            |
-                            |     Save the updated instance to the    |
-                            |     file                                |
-                            +----------------------+-----------------+
-                            | If command is not recognized:           |
-                            |     Display an error message            |
-                            +----------------------+-----------------+
-                                                |
-                                                v
-                            +----------------------------------------+
-                            | Go back to step 1                       |
-                            +----------------------+-----------------+
+                                              +--------------------+
+                                              | Execute command    |
+                                              +--------------------+
+                                                      |
+                                                      v
+                                              +-----------------------+----------------+
+                                              | If command is "quit":                   |
+                                              |     Exit the console                    |
+                                              +----------------------+-----------------+
+                                              | If command is "help":                   |
+                                              |     Display help text                   |
+                                              +----------------------+-----------------+
+                                              | If command is "create":                 |
+                                              |     Check if class name is valid        |
+                                              |     Create a new instance of the class  |
+                                              |     Save the instance to a file         |
+                                              |     Display the ID of the new instance  |
+                                              +----------------------+-----------------+
+                                              | If command is "show":                   |
+                                              |     Check if class name and ID are valid|
+                                              |     Retrieve the instance from the file |
+                                              |     Display the string representation  |
+                                              |     of the instance                     |
+                                              +----------------------+-----------------+
+                                              | If command is "destroy":                |
+                                              |     Check if class name and ID are valid|
+                                              |     Delete the instance from the file   |
+                                              +----------------------+-----------------+
+                                              | If command is "all":                    |
+                                              |     Check if class name is valid        |
+                                              |     Retrieve all instances of the class |
+                                              |     from the file                       |
+                                              |     Display the string representation  |
+                                              |     of each instance                    |
+                                              +----------------------+-----------------+
+                                              | If command is "update":                 |
+                                              |     Check if class name and ID are valid|
+                                              |     Update the instance with the        |
+                                              |     provided key-value pairs            |
+                                              |     Save the updated instance to the    |
+                                              |     file                                |
+                                              +----------------------+-----------------+
+                                              | If command is not recognized:           |
+                                              |     Display an error message            |
+                                              +----------------------+-----------------+
+                                                                      |
+                                                                      v
+                                                                      +----------------------+
+                                                                      | Go back to step 1    |
+                                                                      +----------------------+
