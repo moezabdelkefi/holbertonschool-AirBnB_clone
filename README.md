@@ -28,7 +28,11 @@ What is *args and how to use it
 What is **kwargs and how to use it
 How to handle named arguments in a function
 
-Execution
+### Console
+The console is a command line interpreter that permits management of the backend of HolbertonBnB. It can be used to handle and manipulate all classes utilized by the application (achieved by calls on the storage object defined above).
+
+## Execution
+### using the console
 .Your shell should work like this in interactive mode:
 
                                             $ ./console.py
