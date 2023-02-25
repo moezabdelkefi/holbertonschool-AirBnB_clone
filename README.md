@@ -194,3 +194,6 @@ Unit tests must also pass in non-interactive mode
                                                                       +----------------------+
                                                                       | Go back to step 1    |
                                                                       +----------------------+
+                                                                      
+ ## License:
+This project is licensed under the Holberton School Software Engineering Program.                                                                    
