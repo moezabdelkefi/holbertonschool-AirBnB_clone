@@ -1,7 +1,6 @@
 <h1 align="center">AirBnB clone - The console</h1>
 
 
-
 This project is a command-line interface (CLI) for managing data related to a fictional Airbnb-like service. It allows users to create, update, and delete data related to states, cities, places, reviews, and users.
 
 ### What’s a command interpreter?
@@ -80,44 +79,42 @@ To get help for a specific command, type help command.
 
 Here are some examples of how to use the command interpreter:
 
-                                        (hbnb) create User email="test@test.com" password="password" first_name="John" last_name="Doe"
-                                        This creates a new user with the given email, password, first name, and last name.
+                            (hbnb) create User email="test@test.com" password="password" first_name="John" last_name="Doe"
+                            This creates a new user with the given email, password, first name, and last name.
 
-                                        (hbnb) show User 1234-5678-9012
-                                        This shows the details of the user with the given ID (1234-5678-9012).
+                            (hbnb) show User 1234-5678-9012
+                            This shows the details of the user with the given ID (1234-5678-9012).
 
+                            (hbnb) update User 1234-5678-9012 email="newemail@test.com"
+                            This updates the email of the user with the given ID to newemail@test.com.
 
-                                        (hbnb) update User 1234-5678-9012 email="newemail@test.com"
-                                        This updates the email of the user with the given ID to newemail@test.com.
-
-
-                                        (hbnb) all State
-                                        This shows a list of all states in the system.
+                            (hbnb) all State
+                            This shows a list of all states in the system.
 
 ## Tasks
 
 ### Unittests
 All your files, classes, functions must be tested with unit tests
 
-                                        guillaume@ubuntu:~/AirBnB$ python3 -m unittest discover tests
-                                        ...................................................................................
-                                        ...................................................................................
-                                        .......................
-                                        ----------------------------------------------------------------------
-                                        Ran 189 tests in 13.135s
+                            guillaume@ubuntu:~/AirBnB$ python3 -m unittest discover tests
+                            ...................................................................................
+                            ...................................................................................
+                            .......................
+                            ----------------------------------------------------------------------
+                            Ran 189 tests in 13.135s
 
-                                        OK
-                                        guillaume@ubuntu:~/AirBnB$
+                            OK
+                            guillaume@ubuntu:~/AirBnB$
 
 Unit tests must also pass in non-interactive mode
 
-                                        guillaume@ubuntu:~/AirBnB$ echo "python3 -m unittest discover tests" | bash
-                                        ...................................................................................
-                                        ...................................................................................
-                                        .......................
-                                        ----------------------------------------------------------------------
-                                        Ran 189 tests in 13.135s
+                            guillaume@ubuntu:~/AirBnB$ echo "python3 -m unittest discover tests" | bash
+                            ...................................................................................
+                            ...................................................................................
+                            .......................
+                            ----------------------------------------------------------------------
+                            Ran 189 tests in 13.135s
 
-                                        OK
-                                        guillaume@ubuntu:~/AirBnB$
+                            OK
+                            guillaume@ubuntu:~/AirBnB$
 
