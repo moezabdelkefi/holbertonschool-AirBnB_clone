@@ -1,5 +1,6 @@
 <h1 align="center">AirBnB clone - The console</h1>
 
+![815046647d23428a14ca](https://user-images.githubusercontent.com/113900578/221363211-737846a7-c120-46da-b868-805c28a7ce83.png)
 
 This project is a command-line interface (CLI) for managing data related to a fictional Airbnb-like service. It allows users to create, update, and delete data related to states, cities, places, reviews, and users.
 
