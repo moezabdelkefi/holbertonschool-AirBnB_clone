@@ -7,3 +7,9 @@ from base_model import BaseModel
 
 class state(BaseModel):
     name = ""
+
+    def __init__(self, *args, **kwargs):
+        """
+        Initializes Place instance
+        """
+        super().__init__(*args, **kwargs)
