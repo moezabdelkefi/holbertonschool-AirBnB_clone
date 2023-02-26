@@ -1,10 +1,14 @@
 #!/usr/bin/python3
-""" defeine a classe that inherit from BaseModel"""
-
-
+"""
+Place module
+"""
 from models.base_model import BaseModel
 
-class place(BaseModel):
+
+class Place(BaseModel):
+    """
+    Place class
+    """
     city_id = ""
     user_id = ""
     name = ""

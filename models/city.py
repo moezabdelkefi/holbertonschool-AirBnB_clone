@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-""" defeine a classe that inherit from BaseModel"""
-
-
+"""
+City module
+"""
 from models.base_model import BaseModel
 
 
-class city(BaseModel):
+class City(BaseModel):
+    """
+    City class
+    """
     state_id = ""
     name = ""
 
     def __init__(self, *args, **kwargs):
         """
-        Initializes Place instance
+        Initializes City instance
         """
         super().__init__(*args, **kwargs)

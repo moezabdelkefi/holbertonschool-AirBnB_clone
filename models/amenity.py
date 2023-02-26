@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-""" defeiene a classe that inherit from BaseModel"""
-
-
+"""
+Amenity module
+"""
 from models.base_model import BaseModel
 
 
-class amenity(BaseModel):
+class Amenity(BaseModel):
+    """
+    Amenity class
+    """
     name = ""
 
     def __init__(self, *args, **kwargs):
         """
-        Initializes Place instance
+        Initializes Amenity instance
         """
         super().__init__(*args, **kwargs)
