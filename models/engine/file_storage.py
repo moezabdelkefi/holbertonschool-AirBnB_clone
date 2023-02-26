@@ -4,12 +4,23 @@ import json
 
 
 class FileStorage:
+    """Serializes instances to a JSON file and deserializes JSON file to
+    instances
+    """
     __file_path = "file.json"
     __objects = {}
+    classes = {"BaseModel": BaseModel}
 
-    def all(self):
-        """Returns the dictionary __objects"""
-        return FileStorage.__objects
+    def all(self, cls=None):
+        """Returns the list of objects of one type of class"""
+        if cls is not None:
+            if isinstance(cls, str):
+                cls = self.classes.get(cls, None)
+            if cls is None:
+                return {}
+            return {k: v for k, v in self.__objects.items() if type(v) == cls}
+        else:
+            return self.__objects
 
     def new(self, obj):
         """Sets in __objects the obj with key <obj class name>.id"""
