@@ -7,7 +7,7 @@ import datetime
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
-
+        """this is the main Module"""
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
@@ -19,14 +19,18 @@ class BaseModel:
                     #  used to convert datetime strings passed in as arguments
                     # to the __init__ method (if any) into datetime.
                     # datetime objects.
-                    setattr(self, key, datetime.datetime.strptime(
-                        value, '%Y-%m-%dT%H:%M:%S.%f'))
-                elif key != '__class__':
+                    value = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                if key != '__class__':
                     setattr(self, key, value)
+            create = kwargs['created_at']
+            update = kwargs['updated_at']
+            self.created_at = datetime.datetime.strptime(create, '%Y-%m-%dT%H:%M:%S.%f')
+            self.updated_at = datetime.datetime.strptime(update, '%Y-%m-%dT%H:%M:%S.%f')
         else:
             self.id = str(uuid.uuid4())
-        self.created_at = datetime.datetime.now()
-        self.updated_at = self.created_at
+            self.created_at = self.updated_at = datetime.datetime.now()
+            models.storage.new(self)
+            models.storage.save()
 
     def __str__(self):
         """Return string representation of BaseModel instance."""
@@ -36,7 +40,7 @@ class BaseModel:
     def save(self):
         """Update updated_at attribute with current datetime."""
         self.updated_at = datetime.datetime.now()
-        models.storage.save
+        models.storage.save()
 
     def to_dict(self):
         """return dictionary"""
