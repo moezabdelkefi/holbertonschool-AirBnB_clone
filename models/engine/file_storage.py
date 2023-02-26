@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-
+from models.base_model import BaseModel
 import json
 
 
@@ -30,13 +30,9 @@ class FileStorage:
         try:
             with open(FileStorage.__file_path, 'r') as file:
                 obj_dict = json.load(file)
-                for key, value in obj_dict.items():
-                    class_name, obj_id = key.split('.')
-                    module_name = class_name
-                    class_name = class_name.capitalize()
-                    module = __import__('models.' + module_name, fromlist=[class_name])
-                    cls = getattr(module, class_name)
-                    obj = cls(**value)
-                    FileStorage.__objects[key] = obj
+                for obj in obj_dict.values():
+                    cls_name = obj["__class__"]
+                    del obj["__class__"]
+                    self.new(eval(cls_name)(**obj))
         except FileNotFoundError:
             pass
