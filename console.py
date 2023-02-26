@@ -4,11 +4,26 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.state import state
+from models.city import city
+from models.amenity import amenity
+from models.place import place
+from models.review import review
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     """ command interpreter class"""
     prompt = '(hbnb) '
+    __classes = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review
+    }
 
     def do_quit(self, arg):
         """ Quit command to exit the program """
@@ -24,17 +39,27 @@ class HBNBCommand(cmd.Cmd):
 
     def do_create(self, arg):
         """ Creates a new instance of BaseModel """
-        args = arg.split()
-        if not args:
+        if len(arg) == 0:
             print("** class name missing **")
-            return
-        try:
-            new_inst = eval(args[0])()
-            new_inst.save()
-            print(new_inst.id)
-        except NameError:
+        if arg not in self.models:
             print("** class doesn't exist **")
-
+        if arg == "Basemodel":
+            isinstance = BaseModel()
+        if arg == "User":
+            isinstance = User()
+        if arg == "City":
+            isinstance = city()
+        if arg == "Place":
+            isinstance = place()
+        if arg == "Review":
+            isinstance = review()
+        if arg == "state":
+            isinstance = state()
+        if arg == "amenity":
+            isinstance = amenity()
+        isinstance.save()
+        print(isinstance.id)
+        
     def do_show(self, arg):
         """ Prints the string representation of an instance """
         args = arg.split()
