@@ -9,13 +9,6 @@ from models.place import Place
 from models.state import State
 from models.city import City
 from models.review import Review
-import re
-
-
-def parse(arg):
-    """this funcrion parse the line arg"""
-    match_list = re.findall(r"\{(.*?)\}|\[(.*?)\]|(\S+)", arg)
-    return [match[0] or match[1] or match[2] for match in match_list]
 
 
 class HBNBCommand(cmd.Cmd):
