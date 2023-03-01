@@ -15,11 +15,11 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        """returns the dictionary __objects"""
+        """ returns the __objects dictionary"""
         return FileStorage.__objects
 
     def new(self, obj):
-        """ sets in __objects the obj with key"""
+        """ adds a new object to the __objects dictionary"""
         key = type(obj).__name__ + "." + obj.id
         FileStorage.__objects[key] = obj
 
@@ -31,7 +31,8 @@ class FileStorage:
             json.dump(objdict, f)
 
     def reload(self):
-        """ deserializes the JSON file to __objects"""
+        """loads data from the file specified in __file_path and stores it in
+        the __objects dictionary"""
         try:
             with open(FileStorage.__file_path) as f:
                 objdict = json.load(f)
