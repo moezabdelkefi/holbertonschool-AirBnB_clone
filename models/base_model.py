@@ -11,14 +11,6 @@ class BaseModel:
         if kwargs:
             for key, value in kwargs.items():
                 if key == 'created_at' or key == 'updated_at':
-                    # Convert datetime string to datetime object
-                    # sets the value of an attribute on an object.
-                    # It takes three arguments name, value,object
-                    # strptime parse a string representing a datetime into
-                    # a datetime.datetime object
-                    #  used to convert datetime strings passed in as arguments
-                    # to the __init__ method (if any) into datetime.
-                    # datetime objects.
                     value = datetime.datetime.strptime(
                         value, '%Y-%m-%dT%H:%M:%S.%f')
                 if key != '__class__':
