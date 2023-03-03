@@ -73,7 +73,7 @@ All tests should also pass in non-interactive mode: $ echo "python3 -m unittest 
 
 its converting objects into format that can be easily stored and retrived using json module.
 
-## deserializate:
+## deserialize:
 
 convert it back to a python object.
 
