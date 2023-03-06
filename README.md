@@ -69,6 +69,14 @@ The console is a command line interpreter that permits management of the backend
                                             $
 All tests should also pass in non-interactive mode: $ echo "python3 -m unittest discover tests" | bash
 
+## Serialize:
+
+its converting objects into format that can be easily stored and retrived using json module.
+
+## deserialize:
+
+convert it back to a python object.
+
 ## Command Interpreter:
 
 ### Starting the Command Interpreter
